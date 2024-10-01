@@ -1,14 +1,15 @@
 {
-  "name": "csc-437",
+  "name": "proto",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "public/index.html",
   "scripts": {
+    "start":"http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "description": "",
-  "workspaces":[
-    "packages/*"
-  ]
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
 }
