@@ -1,0 +1,23 @@
+h1{
+    color: white;
+    background: var(--color-background-header);
+    font-size: 1.7em;
+    font-style: bold;
+}
+
+body{
+    background: var(--color-background-page);
+}
+
+p{
+    color: var(--color-text);
+}
+
+h2{
+    color: var(--color-text);
+    font-size: 1.3em;
+}
+
+a{
+    color: var(--color-text);
+}
