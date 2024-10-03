@@ -1,0 +1,17 @@
+h1{
+    color: black;
+    background-color: #ffe9cf;
+    font-size: 1.7em;
+    font-style: bold;
+    border: 5px #7a4e39;
+}
+p{
+    color: #7a4e39;
+}
+h2{
+    color:#7a4e39;
+    font-size: 1.3em;
+}
+a{
+    color: #b36628;
+}
