@@ -1,7 +1,7 @@
 header{
-    background-color: var(--color-background-header);
+    background-color: #8e5200;
     font-size: 1.7em;
-    font-style: bold;
+    font-weight: bold;
     font-family: 'Baloo Paaji 2', arial, serif;
 }
 
@@ -11,24 +11,32 @@ h1{
 }
 
 body{
-    background-color: var(--color-background-page);
+    background-color: rgb(255, 233, 207);
 }
 
 p{
-    font-size: 1em;
+    font-size: .75em;
 }
 
 h2{
-    color: var(--color-text);
+    color: rgb(121, 77, 57);
     font-size: 1.3em;
 }
 
 a{
-    color: var(--color-text);
+    color: rgb(121, 77, 57);
 }
 
 .cafes-list{
     border: 5px solid white;
     list-style-type: none;
+}
+
+svg.icon {
+    display: inline;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    fill: white;
 }
 
