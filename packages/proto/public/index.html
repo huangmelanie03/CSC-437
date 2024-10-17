@@ -7,23 +7,52 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap" rel="stylesheet">
     </head>
-    <header>
-        <div class="header">
-            <h1>The Cozy Cup</h1>
-            <p>Find local cafes and share your thoughts with the community!</p>  
-        </div>
-    </header>
-    <body>
-        <img src="THe Cozy Cup.png" />
-        <svg class="icon" >
-            <use href="/icons/cafe.svg#icon-sign"/>
-        </svg>
-        <h2>Cafes</h2>
-        <ul class="cafes-list">
-            <li><a href="Philz/Philz.html">Philz Coffee</a></li>
-            <li><a href="Nautical/NauticalBean.html">Nautical Bean</a></li>
-            <li><a href="Kaffein/Kaffein.html">Kaffein Coffee Company</a></li>
-            <li><a href="Scout/Scout.html">Scout Coffee</a></li>
+<header>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a href="index.html">The Cozy Cup</a></li>
+            <li class="item"><a href="index.html">Home</a></li>
+            <li class="item"><a href="Cafes/Cafes.html">Cafes</a></li>
+            <li class="item"><a href="About/About.html">About Us</a></li>
+            <li class="toggle"><a href="#"><span class="bars"></span></a></li>
         </ul>
-    </body>
+    </nav>      
+</header> 
+<body>
+
+
+        <img src="THe Cozy Cup.png" class="logoimg"/>
+        <h2 class="intro">
+            Welcome to The Cozy Cup! 
+            Whether you are a coffee enthusiast, a pastry lover, or simply in search of the perfect spot to unwind, we’ve got you covered. Our mission is to help you discover the best cafes around, from hidden gems to popular local favorites. Browse honest reviews, cozy atmospheres, and must-try menu items that make each cafe unique. Join us in exploring the world of coffee culture one cup at a time, and find your next go-to cafe right here. Sip, savor, and share your experiences with us!   
+        <br>
+        <br>
+        <br>
+            <svg class="icon" >
+            <use href="/icons/cafe.svg#icon-sign"/>
+            </svg>
+            Featured Cafes
+        </h2>
+        <ul class="cafes-list">
+            <li><a href="Philz/Philz.html">Philz Coffee</a>
+                <br>
+                <img src="philzcoffee.jpeg" class="cafepics"/>
+                <br>
+            </li>
+            <li><a href="Nautical/NauticalBean.html">Nautical Bean</a>
+                <br>
+                <img src="nautibean.jpeg" class="cafepics"/>
+                <br>
+            </li>
+            <li><a href="Kaffein/Kaffein.html">Kaffein Coffee Company</a>
+                <br>
+                <img src="kaffeinimg.jpeg" class="cafepics"/>
+                <br>
+            </li>
+            <li><a href="Scout/Scout.html">Scout Coffee</a>
+                <br>
+                <img src="scoutimg.jpeg" class="cafepics"/>
+            </li>
+        </ul>
+</body>
 </html>
