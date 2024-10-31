@@ -3,3 +3,9 @@
     --color-background-page: rgb(255, 233, 207);
     --color-text: rgb(121, 77, 57);
 }
+
+body.dark-mode{
+    --color-background-page: #8e5200;
+    --color-text: rgb(255, 233, 207);
+    --color-background-header: rgb(255, 233, 207);
+}

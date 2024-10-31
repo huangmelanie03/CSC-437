@@ -1,8 +1,65 @@
-header{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+}
+
+nav{
+    position: sticky;
     background-color: var(--color-background-header);
+    padding: 5px 20px;
+}
+ul{
+    list-style-type: none;
+}
+.menu a{
+    color: var(--header-color-text);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.menu li{
+    font-size: 16px;
+    padding: 15px 5px;
+}
+.menu li a{
+    display: block;
+}
+.logo a{
+    font-size: 20px;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    background-color: var(--color-background-page);
     font-size: 1.7em;
-    font-style: bold;
+    font-weight: bold;
     font-family: 'Baloo Paaji 2', arial, serif;
+    text-align: center;
+    color:var(--color-text)
+}
+
+.logoimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.intro{
+    text-align: center;
+    font-family: 'Baloo Paaji 2', arial, serif;
+    color: var(--color-text);
 }
 
 h1{
@@ -12,10 +69,13 @@ h1{
 
 body{
     background-color: var(--color-background-page);
+    margin: 20px;
+    padding: 20px;
 }
 
 p{
-    font-size: 1em;
+    font-size: .75em;
+    text-align: center;
 }
 
 h2{
@@ -23,12 +83,50 @@ h2{
     font-size: 1.3em;
 }
 
+
 a{
     color: var(--color-text);
 }
 
-.cafes-list{
+
+.cafes-list ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     border: 5px solid white;
     list-style-type: none;
+    padding: 0;
+    justify-content: space-around;
 }
 
+.cafes-list li{
+    flex: 1 1 45%;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.cafes-list .cafepics{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+svg.icon {
+    display: inline;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    fill: white;
+}
+
+.information dt{
+    font-weight: bold;
+}
+
+.information dd{
+    font-weight: normal;
+    margin-left: 20px;
+}
