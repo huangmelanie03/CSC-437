@@ -10,15 +10,17 @@ body {
 
 nav{
     position: sticky;
-    background-color: #8e5200;
-    padding: 5px 20px;
+     background-color: var(--color-background-header);
+     background-color: #8e5200;
+     padding: 5px 20px;
 }
 ul{
     list-style-type: none;
 }
 .menu a{
-    color: white;
-    text-decoration: none;
+     color: var(--header-color-text);
+     color: white;
+     text-decoration: none;
 }
 a:hover{
     text-decoration: underline;
@@ -41,13 +43,15 @@ a:hover{
 }
 
 header{
-    background-color: rgb(255, 233, 207);
-    font-size: 1.7em;
+     background-color: var(--color-background-page);
+     background-color: rgb(255, 233, 207);
+     font-size: 1.7em;
     font-weight: bold;
     font-family: 'Baloo Paaji 2', arial, serif;
     text-align: center;
-    color:rgb(121, 77, 57)
-}
+     color:var(--color-text)
+     color:rgb(121, 77, 57)
+ }
 
 .logoimg {
     display: block;
@@ -59,8 +63,9 @@ header{
 .intro{
     text-align: center;
     font-family: 'Baloo Paaji 2', arial, serif;
-    color: #8e5200;
-}
+     color: var(--color-text);
+     color: #8e5200;
+ }
 
 h1{
     margin: 0px;
@@ -68,8 +73,9 @@ h1{
 }
 
 body{
-    background-color: rgb(255, 233, 207);
-    margin: 20px;
+     background-color: var(--color-background-page);
+     background-color: rgb(255, 233, 207);
+     margin: 20px;
     padding: 20px;
 }
 
@@ -97,7 +103,40 @@ a{
     list-style-type: none;
     padding: 0;
     justify-content: space-around;
+ }
+
+.cafes-list li{
+    flex: 1 1 45%;
+    text-align: center;
+    color: var(--color-text);
 }
+
+.cafes-list .cafepics{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+svg.icon {
+    display: inline;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    fill: white;
+}
+
+.information dt{
+    font-weight: bold;
+}
+
+.information dd{
+    font-weight: normal;
+    margin-left: 20px;
+}
+ }
 
 .cafes-list li{
     flex: 1 1 45%;
@@ -130,3 +169,4 @@ svg.icon {
     font-weight: normal;
     margin-left: 20px;
 }
+ 

@@ -2,11 +2,53 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="/styles/tokens.css" />
+        <link rel="stylesheet" href="/styles/page.css" />
         <link rel="stylesheet" href="styles/page.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap" rel="stylesheet">
     </head>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@calpoly/mustang": "https://unpkg.com/@calpoly/mustang"
+          }
+        }
+    </script>
+    <script type = "module">
+        import { define } from "@calpoly/mustang";
+        import { HeaderElement } from "/scripts/header.js";
+  
+        define({
+            "cafe-header": HeaderElement
+        });
+
+        HeaderElement.initializeOnce();
+
+        
+
+    /*
+
+    const page = document.body;
+        function toggleDarkMode(target, checked){
+            const customEvent = new CustomElement(
+                "dark-mode: toggle",{
+                    bubbles: true,
+                    detail: {checked},
+                }
+            );
+                target.dispatchEvent(customEvent);
+        }
+
+*/
+
+    </script>
+<cafe-header>
+            
+</cafe-header>
 <header>
     <nav>
         <ul class="menu">
@@ -15,14 +57,32 @@
             <li class="item"><a href="Cafes/Cafes.html">Cafes</a></li>
             <li class="item"><a href="About/About.html">About Us</a></li>
             <li class="toggle"><a href="#"><span class="bars"></span></a></li>
+            <li class="darkmode">
+                <label>
+                    <input type="checkbox" />
+                    Dark mode
+                </label> 
+            </li>
         </ul>
+    </nav>    
+</header> 
+<body>
+<script>
+    const page = document.body;
+    page.addEventListener("change", (event) => {
+    const checked = event.target.checked;
+    page.classList.toggle("dark-mode", checked);
+    });
+</script>
+        <img src="THe_Cozy_Cup-removebg-preview.png" class="logoimg"/>
+         </ul>
     </nav>      
 </header> 
 <body>
 
 
         <img src="THe Cozy Cup.png" class="logoimg"/>
-        <h2 class="intro">
+         <h2 class="intro">
             Welcome to The Cozy Cup! 
             Whether you are a coffee enthusiast, a pastry lover, or simply in search of the perfect spot to unwind, we’ve got you covered. Our mission is to help you discover the best cafes around, from hidden gems to popular local favorites. Browse honest reviews, cozy atmospheres, and must-try menu items that make each cafe unique. Join us in exploring the world of coffee culture one cup at a time, and find your next go-to cafe right here. Sip, savor, and share your experiences with us!   
         <br>
