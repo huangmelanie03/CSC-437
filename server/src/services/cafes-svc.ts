@@ -19,6 +19,11 @@ function index():Promise<cafes[]>{
     return CafeModel.find();
 }
 
+function create(json: cafes): Promise<cafes> {
+    const t = new CafeModel(json);
+    return t.save();
+  }
+
 function get(cafeId:String): Promise<cafes>{
     return CafeModel.find({cafeId})
         .then((list)=>list[0])
@@ -28,7 +33,27 @@ function get(cafeId:String): Promise<cafes>{
     );
 }
 
-export default {index, get};
+function update(
+    cafeId: String,
+    cafes: cafes
+  ): Promise<cafes> {
+    return CafeModel.findOneAndUpdate({ cafeId }, cafes, {
+      new: true
+    }).then((updated) => {
+      if (!updated) throw `${cafeId} not updated`;
+      else return updated as cafes;
+    });
+}
+
+function remove(cafeId: String): Promise<void> {
+    return CafeModel.findOneAndDelete({ cafeId }).then(
+      (deleted) => {
+        if (!deleted) throw `${cafeId} not deleted`;
+      }
+    );
+}
+
+//export default {index, get};
 
 const cafes = {
     Philz:{
@@ -72,5 +97,9 @@ export function getCafe(name: string): cafes {
     // return Philz regardless of which cafe is requested
     return cafes["Philz"];
 }
+
+export default { index, get, create, update, remove };
+
+
 
 
