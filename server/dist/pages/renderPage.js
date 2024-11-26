@@ -48,5 +48,5 @@ const defaults = {
   }
 };
 function renderPage(page) {
-  return (0, import_server.renderWithDefaults)(page, defaults);
+  return (0, import_server.renderWithDefaults)(page);
 }

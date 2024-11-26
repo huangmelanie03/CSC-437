@@ -21,30 +21,28 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
-var import_mongo = require("./services/mongo");
 var import_express = __toESM(require("express"));
-var import_cafes = require("./pages/cafes");
-var import_cafes_svc = require("./services/cafes-svc");
-var import_cafes2 = __toESM(require("./routes/cafes"));
-(0, import_mongo.connect)("cafes");
-const app = (0, import_express.default)();
-const port = process.env.PORT || 3e3;
-const staticDir = process.env.STATIC || "public";
-app.use("/api/cafes", import_cafes2.default);
-app.use(import_express.default.static(staticDir));
-app.use(import_express.default.json());
-app.get("/hello", (req, res) => {
-  res.send("Hello, World");
+var import_cafes_svc = __toESM(require("../services/cafes-svc"));
+const router = import_express.default.Router();
+router.get("/", (_, res) => {
+  import_cafes_svc.default.index().then((list) => res.json(list)).catch((err) => res.status(500).send(err));
 });
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+router.get("/:cafeId", (req, res) => {
+  const { cafeId } = req.params;
+  import_cafes_svc.default.get(cafeId).then((cafes2) => res.json(cafes2)).catch((err) => res.status(404).send(err));
 });
-app.get(
-  "/destination/:destId",
-  (req, res) => {
-    const { cafeId } = req.params;
-    const data = (0, import_cafes_svc.getCafe)(cafeId);
-    const page = new import_cafes.CafesPage(data);
-    res.set("Content-Type", "text/html").send(page.render());
-  }
-);
+router.post("/", (req, res) => {
+  const newCafe = req.body;
+  import_cafes_svc.default.create(newCafe).then(
+    (cafes2) => res.status(201).json(cafes2)
+  ).catch((err) => res.status(500).send(err));
+});
+app.put("/:cafeId", (req, res) => {
+  const { cafeId } = req.params;
+  const newCafe = req.body;
+  import_cafes_svc.default.update(cafeId, newCafe).then((cafes2) => res.json(cafes2)).catch((err) => res.status(404).end());
+});
+router.delete("/:cafeId", (req, res) => {
+  const { cafeId } = req.params;
+  import_cafes_svc.default.remove(cafeId).then(() => res.status(204).end()).catch((err) => res.status(404).send(err));
+});
