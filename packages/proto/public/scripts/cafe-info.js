@@ -1,22 +1,35 @@
 import { css, html, shadow } from "@calpoly/mustang";
 import reset from "./styles/reset.css.js";
 
+
 export class CafeInfoElement extends HTMLElement{
-    static template = html`
-        <template> 
-            <h2><slot name="rating"></slot></h2>
+    static template = html` <template> 
+            <h2>
+                <slot name="rating"></slot>
+            </h2>
             <dl>
-                <dt>Phone Number</dt>
-                <dd><slot name="phone"></slot></dd>
-                <dt>Hours</dt>
-                <dd><slot name="hours"></slot></dd>
-                <dt>Address</dt>
-                <dd><slot name="address"></slot></dd>
+                <dt>
+                    <span>Phone Number: </span>
+                </dt>
+                <dd><slot name="numbers"></slot></dd>
+                <dt>
+                    <span>Hours: </span>
+                </dt>
+                <dd><slot name="cafe-hours"></slot></dd>
+                <dt>
+                    <span>Address: </span>
+                </dt>
+                <dd><slot name="cafe-address"></slot></dd>
             </dl>
         </template>
     `;
 
-    static style = css`
+    static styles = css`
+        h2{
+            color: var(--color-text);
+            font-size: 1.3em;
+        }
+
         dt{
             font-weight: bold;
         }
@@ -25,13 +38,14 @@ export class CafeInfoElement extends HTMLElement{
             font-weight: normal;
             margin-left: 20px;
         }
+
     `;
 
     constructor(){
         super();
         shadow(this)
-            template(CafeInfoElement.template)
-            styles(CafeInfoElement.styles);
+            .template(CafeInfoElement.template)
+            .styles(CafeInfoElement.styles);
     }
 }
 

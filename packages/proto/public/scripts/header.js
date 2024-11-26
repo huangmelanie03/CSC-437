@@ -14,7 +14,7 @@ import {
     });
   
     static template = html`<template>
-        <h1>Blazing Travels</h1>
+        <h1></h1>
     </template>`;
   
     static styles = css`

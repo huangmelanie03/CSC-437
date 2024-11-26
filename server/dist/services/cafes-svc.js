@@ -34,6 +34,35 @@ const cafesSchema = new import_mongoose.Schema(
   { collection: "cafes_infos" }
 );
 const CafeModel = (0, import_mongoose.model)("cafeInfo", cafesSchema);
+function index() {
+  return CafeModel.find();
+}
+function create(json) {
+  const t = new CafeModel(json);
+  return t.save();
+}
+function get(cafeId) {
+  return CafeModel.find({ cafeId }).then((list) => list[0]).catch(
+    (err) => {
+      throw `${cafeId} Not Found`;
+    }
+  );
+}
+function update(cafeId, cafes2) {
+  return CafeModel.findOneAndUpdate({ cafeId }, cafes2, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${cafeId} not updated`;
+    else return updated;
+  });
+}
+function remove(cafeId) {
+  return CafeModel.findOneAndDelete({ cafeId }).then(
+    (deleted) => {
+      if (!deleted) throw `${cafeId} not deleted`;
+    }
+  );
+}
 const cafes = {
   Philz: {
     name: "Philz Coffee",
@@ -67,17 +96,7 @@ const cafes = {
 function getCafe(name) {
   return cafes["Philz"];
 }
-function index() {
-  return CafeModel.find();
-}
-function get(cafeId) {
-  return CafeModel.find({ cafeId }).then((list) => list[0]).catch(
-    (err) => {
-      throw `${cafeId} Not Found`;
-    }
-  );
-}
-var cafes_svc_default = { index, get };
+var cafes_svc_default = { index, get, create, update, remove };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   getCafe
