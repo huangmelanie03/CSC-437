@@ -49,9 +49,26 @@ export class CafeInfoElement extends HTMLElement{
     }
 }
 
-connectedCallback(){
-    if (this.src) this.hydrate(this.src);
+_authObserver = new Observer(this, "cafes:auth");
+
+get authorization(){
+    return(
+        this._user?.authenticated &&{
+            Authorization: `Bearer ${this._user.token}`
+        }
+    );
 }
+
+connectedCallback(){
+    this._authObserver.observe(({user})=>{
+        this._user = user;
+    });
+    //if (this.src) this.hydrate(this.src);
+}
+
+fetch(url, {headers: this.authorization}).then((res)=>{
+    //handle the response
+});
 
 hydrate(url){
     fetch(url)
