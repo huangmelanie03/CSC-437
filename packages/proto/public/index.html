@@ -19,11 +19,12 @@
         }
     </script>
     <script type = "module">
-        import { define } from "@calpoly/mustang";
+        import { define, Auth } from "@calpoly/mustang";
         import { HeaderElement } from "/scripts/header.js";
   
         define({
-            "cafe-header": HeaderElement
+            "cafe-header": HeaderElement,
+            "mu-auth": Auth.Provider
         });
 
         HeaderElement.initializeOnce();
@@ -49,6 +50,7 @@
 <cafe-header>
             
 </cafe-header>
+<mu-auth provides="cafes:auth"></mu-auth>
 <header>
     <nav>
         <ul class="menu">
@@ -81,7 +83,7 @@
 <body>
 
 
-        <img src="THe Cozy Cup.png" class="logoimg"/>
+
          <h2 class="intro">
             Welcome to The Cozy Cup! 
             Whether you are a coffee enthusiast, a pastry lover, or simply in search of the perfect spot to unwind, we’ve got you covered. Our mission is to help you discover the best cafes around, from hidden gems to popular local favorites. Browse honest reviews, cozy atmospheres, and must-try menu items that make each cafe unique. Join us in exploring the world of coffee culture one cup at a time, and find your next go-to cafe right here. Sip, savor, and share your experiences with us!   
@@ -115,4 +117,5 @@
             </li>
         </ul>
 </body>
+</mu-auth>
 </html>
