@@ -100,3 +100,6 @@ export function getCafe(name: string): cafes {
 
 export default { index, get, create, update, remove };
 
+
+
+

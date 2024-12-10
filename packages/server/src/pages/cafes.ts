@@ -1,4 +1,3 @@
-// src/pages/cafes.ts
 import { css, html } from "@calpoly/mustang/server";
 import { cafes} from "../models/cafes";
 

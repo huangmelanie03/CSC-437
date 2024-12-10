@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+}
+
+nav{
+    position: sticky;
+     background-color: var(--color-background-header);
+     background-color: #8e5200;
+     padding: 5px 20px;
+}
+ul{
+    list-style-type: none;
+}
+.menu a{
+     color: var(--header-color-text);
+     color: white;
+     text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.menu li{
+    font-size: 16px;
+    padding: 15px 5px;
+}
+.menu li a{
+    display: block;
+}
+.logo a{
+    font-size: 20px;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+     background-color: var(--color-background-page);
+     background-color: rgb(255, 233, 207);
+     font-size: 1.7em;
+    font-weight: bold;
+    font-family: 'Baloo Paaji 2', arial, serif;
+    text-align: center;
+     color:var(--color-text)
+     color:rgb(121, 77, 57)
+ }
+
+.logoimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.intro{
+    text-align: center;
+    font-family: 'Baloo Paaji 2', arial, serif;
+     color: var(--color-text);
+     color: #8e5200;
+ }
+
+h1{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+     background-color: var(--color-background-page);
+     background-color: rgb(255, 233, 207);
+     margin: 20px;
+    padding: 20px;
+}
+
+p{
+    font-size: .75em;
+    text-align: center;
+}
+
+h2{
+    color: rgb(121, 77, 57);
+    font-size: 1.3em;
+}
+
+
+a{
+    color: rgb(121, 77, 57);
+}
+
+
+.cafes-list ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: 5px solid white;
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-around;
+ }
+
+.cafes-list li{
+    flex: 1 1 45%;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.cafes-list .cafepics{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+svg.icon {
+    display: inline;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    fill: white;
+}
+
+.information dt{
+    font-weight: bold;
+}
+
+.information dd{
+    font-weight: normal;
+    margin-left: 20px;
+}
+ }
+
+.cafes-list li{
+    flex: 1 1 45%;
+    text-align: center;
+    color: #8e5200;
+}
+
+.cafes-list .cafepics{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+svg.icon {
+    display: inline;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    fill: white;
+}
+
+.information dt{
+    font-weight: bold;
+}
+
+.information dd{
+    font-weight: normal;
+    margin-left: 20px;
+}
+ 
