@@ -8,7 +8,12 @@ import { getCafe } from "./services/cafes-svc";
 import cafes from "./services/cafes-svc"
 import fs from "node:fs/promises";
 import path from "path";
+
 import auth, { authenticateUser } from "./routes/auth";
+
+import{UserPage} from  "./pages/user";
+import User from "./services/user-svc";
+import Users from "./routes/user";
 
 import { connect } from "./services/mongo";
 
@@ -22,6 +27,9 @@ app.use(express.static(staticDir));
 
 // Middleware
 app.use(express.json());
+
+app.use("/auth", auth);
+app.use("/api/users", authenticateUser, Users);
 
 app.use("/app", (req: Request, res: Response) => {
   const indexHtml = path.resolve(staticDir, "index.html");
