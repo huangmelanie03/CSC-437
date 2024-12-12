@@ -45,13 +45,15 @@
 
 
 <body>
-    <mu-auth provides="cafes:auth" redirect="./login.html">
+    <mu-history provides = "cafe:history">
+    <mu-auth provides="cafe:auth" redirect="./login.html">
     <cafe-header></cafe-header>
-    <cafe-app></cafe-app>
+    <mu-switch></mu-switch>
+    <!-- <cafe-app></cafe-app> -->
     
         <img src="THe_Cozy_Cup-removebg-preview.png" class="logoimg"/>
          </ul>
-</body>     
+    
             <h2 class="intro">
             Welcome to The Cozy Cup! 
             Whether you are a coffee enthusiast, a pastry lover, or simply in search of the perfect spot to unwind, we’ve got you covered. Our mission is to help you discover the best cafes around, from hidden gems to popular local favorites. Browse honest reviews, cozy atmospheres, and must-try menu items that make each cafe unique. Join us in exploring the world of coffee culture one cup at a time, and find your next go-to cafe right here. Sip, savor, and share your experiences with us!   
@@ -84,6 +86,9 @@
                 <img src="scoutimg.jpeg" class="cafepics"/>
             </li>
         </ul>
-</body>
+
+        <a href="/app/about-view"></a>
 </mu-auth>
+</mu-history>
+</body>
 </html>
