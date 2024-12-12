@@ -2,6 +2,12 @@ import bcrypt from "bcryptjs";
 import {Schema, model} from "mongoose";
 import{Credential} from "../models/credential";
 
+enum MESSAGES {
+    noUsernamePassword = "Must provide username and password",
+    invalidUsernamePassword = "Invalid username or password",
+    userNameExists = "Username exists"
+}
+
 const credentialSchema = new Schema<Credential>(
     {
         username:{

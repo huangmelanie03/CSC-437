@@ -47,6 +47,7 @@
 <body>
     <mu-history provides = "cafe:history">
     <mu-auth provides="cafe:auth" redirect="./login.html">
+    <mu-store provides="blazing:model">
     <cafe-header></cafe-header>
     <mu-switch></mu-switch>
     <!-- <cafe-app></cafe-app> -->
@@ -88,6 +89,7 @@
         </ul>
 
         <a href="/app/about-view"></a>
+</mu-store>
 </mu-auth>
 </mu-history>
 </body>

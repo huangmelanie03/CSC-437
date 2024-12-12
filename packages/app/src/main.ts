@@ -1,4 +1,7 @@
-import { Auth, History, Switch, define } from "@calpoly/mustang";
+import { Auth, History, Switch,Store, define } from "@calpoly/mustang";
+import { Msg } from "./messages";
+import { Model, init } from "./model";
+import update from "./update";
 import { html, LitElement } from "lit";
 import { HeaderElement } from "./components/header";
 import { HomeViewElement} from "./views/home-view";
@@ -9,6 +12,7 @@ import LoginView from "./views/login-view";
 import RegisterView from "./views/register-view";
 import ProfileView from "./views/profile-view";
 import WriteReviewView from "./views/write-review-view";
+import { Store } from "../../../node_modules/@calpoly/mustang/dist/mustang";
 
 const routes = [
     {
@@ -68,6 +72,11 @@ class AppElement extends LitElement {
 define({
     "mu-auth": Auth.Provider,
     "mu-history": History.Provider,
+    "mu-store": class AppStore extends Store.Provider<Model,Msg>{
+        constructor(){
+            super(update, init, "cafe:auth");
+        }
+    },
     "mu-switch": class AppSwitch extends Switch.Element{
         constructor(){
             super(routes, "cafe:history", "cafe:auth");
