@@ -19,6 +19,20 @@ export default function update(
             apply((model) => ({...model, cafe}))
             );
             break;
+        case "user/save":
+            saveProfile(message[1], user)
+            .then((user) =>
+            apply((model) => ({...model, user}))
+            )
+            .then(() => {
+                const{onSuccess} = message[1];
+                if(onSuccess) onSuccess();
+            })
+            .catch((error:Error) => {
+                const{onFailure} = message[1];
+                if(onFailure) onFailure(error);
+            });
+            break;
         default:
             const unhandled: never = message[0];
             throw new Error(`Unhandled Auth message "${unhandled}"`);
@@ -54,6 +68,34 @@ function selectProfile(msg: { userid: string}, user: Auth.User){
             console.log("Profile:", json);
             return json as User;
         }
+    });
+}
+
+function saveProfile(
+    msg:{
+        userid: string;
+        profile: User;
+    },
+    user: Auth.User
+){
+    return fetch(`/api/user/${msg.userid}`,{
+        method: "PUT",
+        headers:{
+            "Content-Type": "application/json",
+            ...Auth.headers(user)
+        },
+        body: JSON.stringify(msg.profile)
+    })
+    .then((response: Response) => {
+        if(response.status === 200) return response.json();
+        else
+            throw new Error(
+                `Failed to save profile for ${msg.userid}`
+            );
+    })
+    .then((json: unknown) => {
+        if(json) return json as User;
+        return undefined;
     });
 }
 

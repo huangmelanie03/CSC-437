@@ -68,6 +68,7 @@ export class HeaderElement extends LitElement {
   static styles = css`
   :host {
     display: contents;
+    position: sticky;
   }
   header{
     color: white;

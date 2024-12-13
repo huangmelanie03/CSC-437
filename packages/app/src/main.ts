@@ -11,17 +11,18 @@ import AboutView from "./views/about-view";
 import LoginView from "./views/login-view";
 import RegisterView from "./views/register-view";
 import ProfileView from "./views/profile-view";
+import PhilzView from "/Users/melaniehuang/Documents/GitHub/CSC-437/packages/app/src/views/philz-view";
 import WriteReviewView from "./views/write-review-view";
 import { Store } from "../../../node_modules/@calpoly/mustang/dist/mustang";
 
 const routes = [
     {
-        path: "/app/cafes/:id",
+        path: "/app/cafe/:id",
         view: (params:Switch.Params) => html`
         <cafe-view cafes-id = ${params.id}></cafe-view>`
     },
     {
-        path:"/app/cafes",
+        path:"/app/cafe",
         view:() => html`
         <landing-view></landing-view>`
     },
@@ -49,14 +50,24 @@ const routes = [
         path: "/write-review/:id",
         view: (params: Switch.Params) => html`
         <write-review-page cafe-id="${params.id}"></write-review-page>`
-    }
+    },
+    {
+        path: "/app/",
+        view: () => html`
+        <home-view></home-view>
+      `
+    },
+    {
+        path: "/app",
+        view: () => html`<home-view></home-view>`
+    },
+    {
+        path: "/app/cafes/philz",
+        view: () => html`<philz-view></philz-view>`
+    },
 ];
 
 class AppElement extends LitElement {
-    static uses = define({
-        "home-view":HomeViewElement
-    });
-
     protected render(){
         return html`
         <home-view></home-view>
@@ -90,5 +101,7 @@ define({
     "login-view": LoginView,
     "register-view": RegisterView,
     "profile-view": ProfileView,
-    "write-review-view": WriteReviewView
+    "write-review-view": WriteReviewView,
+    "home-view": HomeViewElement,
+    "philz-view": PhilzView
 });
